@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>音楽の発掘FM</title>
+    <link>https://yuukitakuwan-cpu.github.io/music-fm/</link>
+    <atom:link href="https://yuukitakuwan-cpu.github.io/music-fm/feed.xml" rel="self" type="application/rss+xml"/>
+    <language>ja</language>
+    <description><![CDATA[哀愁メロディックパンクを軸に、メジャーからマイナーまで、毎朝1枚のアルバムを友達みたいなDJが紹介する、たった一人のリスナーのためのラジオ番組。紹介するのはApple Musicで聴けるものだけ。音声：VOICEVOX:春日部つむぎ]]></description>
+    <itunes:subtitle>毎朝ひとつ、きみのためのアルバムを発掘するラジオ</itunes:subtitle>
+    <itunes:summary><![CDATA[哀愁メロディックパンクを軸に、メジャーからマイナーまで、毎朝1枚のアルバムを友達みたいなDJが紹介する、たった一人のリスナーのためのラジオ番組。紹介するのはApple Musicで聴けるものだけ。音声：VOICEVOX:春日部つむぎ]]></itunes:summary>
+    <itunes:author>音楽の発掘FM</itunes:author>
+    <itunes:owner><itunes:name>音楽の発掘FM</itunes:name></itunes:owner>
+    <itunes:image href="https://yuukitakuwan-cpu.github.io/music-fm/artwork.png"/>
+    <image><url>https://yuukitakuwan-cpu.github.io/music-fm/artwork.png</url><title>音楽の発掘FM</title><link>https://yuukitakuwan-cpu.github.io/music-fm/</link></image>
+    <itunes:category text="Music"><itunes:category text="Music Commentary"/></itunes:category>
+    <itunes:explicit>false</itunes:explicit>
+    <itunes:type>episodic</itunes:type>
+    <itunes:block>Yes</itunes:block>
+    <lastBuildDate>Fri, 20 Nov 2026 13:00:54 +0900</lastBuildDate>
+    <item>
+      <title>第0回（パイロット）Northern19『Everlasting』</title>
+      <itunes:title>第0回（パイロット）Northern19『Everlasting』</itunes:title>
+      <itunes:episode>0</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+      <description><![CDATA[音楽の発掘FM、第0回（パイロット版）。番組のルール紹介と、記念すべき最初の一枚。
+
+今日の一枚：Northern19『Everlasting』
+Apple Music：https://music.apple.com/jp/album/everlasting/293219594
+
+疾走するビートに哀愁メロディ。エルレやハイスタの切なさ・疾走感が好きな人に。
+おすすめ：「THE NIGHT WITHOUT A STAR」「BY MY HAND, AND MY HEART」
+
+音声：VOICEVOX:春日部つむぎ]]></description>
+      <content:encoded><![CDATA[<p>音楽の発掘FM、第0回（パイロット版）。番組のルール紹介と、記念すべき最初の一枚。</p><p>今日の一枚：Northern19『Everlasting』<br>Apple Music：<a href="https://music.apple.com/jp/album/everlasting/293219594">https://music.apple.com/jp/album/everlasting/293219594</a></p><p>疾走するビートに哀愁メロディ。エルレやハイスタの切なさ・疾走感が好きな人に。<br>おすすめ：「THE NIGHT WITHOUT A STAR」「BY MY HAND, AND MY HEART」</p><p>音声：VOICEVOX:春日部つむぎ</p>]]></content:encoded>
+      <itunes:summary><![CDATA[音楽の発掘FM、第0回（パイロット版）。番組のルール紹介と、記念すべき最初の一枚。
+
+今日の一枚：Northern19『Everlasting』
+Apple Music：https://music.apple.com/jp/album/everlasting/293219594
+
+疾走するビートに哀愁メロディ。エルレやハイスタの切なさ・疾走感が好きな人に。
+おすすめ：「THE NIGHT WITHOUT A STAR」「BY MY HAND, AND MY HEART」
+
+音声：VOICEVOX:春日部つむぎ]]></itunes:summary>
+      <enclosure url="https://yuukitakuwan-cpu.github.io/music-fm/episodes/20261120-000.mp3" length="1948570" type="audio/mpeg"/>
+      <guid isPermaLink="false">music-fm-0000-2026-11-20</guid>
+      <pubDate>Fri, 20 Nov 2026 13:00:54 +0900</pubDate>
+      <itunes:duration>00:02:42</itunes:duration>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://yuukitakuwan-cpu.github.io/music-fm/artwork.png"/>
+    </item>
+  </channel>
+</rss>

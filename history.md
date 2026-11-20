@@ -16,3 +16,4 @@
 |---|---|---|---|---|
 | 0 | 2026-11-20 | Northern19 | Everlasting | https://music.apple.com/jp/album/everlasting/293219594 |
 | 1 | 2026-11-20 | dustbox | Sound A Bell Named Hope | https://music.apple.com/jp/album/sound-a-bell-named-hope/262659118 |
+| 2 | 2026-11-21 | HAWAIIAN6 | BEGINNINGS | https://music.apple.com/jp/album/beginnings/1742518936 |

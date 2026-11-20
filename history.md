@@ -4,7 +4,12 @@
 同じアルバムは二度と紹介しない。同じアーティストも、直近20回以内は避ける。
 
 ## 除外アーティスト（Apple Music 未配信など）
-- SHANK（Apple Music 未配信）
+- SHANK（Apple Music 未配信扱い。ただし「Set the fire」がめちゃくちゃ好み＝方向性の参考に）
+
+## 以前のルーティンで紹介済み（同じアーティストは避ける）
+- Dizzy Sunfist
+- locofrank
+- Ken Yokoyama
 
 ## 履歴
 | 回 | 日付 | アーティスト | アルバム | Apple Music |

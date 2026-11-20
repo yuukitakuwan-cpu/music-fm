@@ -12,7 +12,8 @@ bash scripts/setup_voicevox.sh   # 冪等。初回は約2分（2GB取得）、�
 ## 1. アルバムを選ぶ
 リスナーの好み（核は **哀愁のあるメロディックパンク**）:
 Hi-STANDARD、ELLEGARDEN、10-FEET、HEY-SMITH、SiM、マキシマム ザ ホルモン、花冷え。、
-サカナクション、Kroi、キタニタツヤ、羊文学、くるり、JUDY AND MARY、Green Day など。
+サカナクション、Kroi、キタニタツヤ、羊文学、くるり、JUDY AND MARY、YUKI、MONKEY MAJIK、ORANGE RANGE、
+Hump Back、DJ TATSUKI、Green Day など。SHANK「Set the fire」がめちゃくちゃ好み（SHANK 自体は紹介しない）。
 
 - メジャーからマイナー（インディー、海外、昔の名盤、新譜）まで幅広く。7割くらいは哀愁メロコア/パンク寄り、
   残りは好みの周辺（オルタナ、ミクスチャー、ラウド、ギターロック、ファンク寄り等）から。

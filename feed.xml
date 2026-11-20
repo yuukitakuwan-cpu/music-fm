@@ -16,7 +16,38 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
     <itunes:block>Yes</itunes:block>
-    <lastBuildDate>Fri, 20 Nov 2026 13:00:54 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 20 Nov 2026 13:14:14 +0900</lastBuildDate>
+    <item>
+      <title>第1回 dustbox『Sound A Bell Named Hope』</title>
+      <itunes:title>第1回 dustbox『Sound A Bell Named Hope』</itunes:title>
+      <itunes:episode>1</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+      <description><![CDATA[音楽の発掘FM、第1回。1996年に埼玉で結成されたメロディックパンクバンド、dustboxのメジャーデビュー前の一枚。
+
+今日の一枚：dustbox『Sound A Bell Named Hope』
+Apple Music：https://music.apple.com/jp/album/sound-a-bell-named-hope/262659118
+
+疾走するビートと伸びやかなハイトーン、明るいのに切ないメロディ。エルレやハイスタが好きな人に。
+おすすめ：「虹」「Promise You」
+
+音声：VOICEVOX:春日部つむぎ]]></description>
+      <content:encoded><![CDATA[<p>音楽の発掘FM、第1回。1996年に埼玉で結成されたメロディックパンクバンド、dustboxのメジャーデビュー前の一枚。</p><p>今日の一枚：dustbox『Sound A Bell Named Hope』<br>Apple Music：<a href="https://music.apple.com/jp/album/sound-a-bell-named-hope/262659118">https://music.apple.com/jp/album/sound-a-bell-named-hope/262659118</a></p><p>疾走するビートと伸びやかなハイトーン、明るいのに切ないメロディ。エルレやハイスタが好きな人に。<br>おすすめ：「虹」「Promise You」</p><p>音声：VOICEVOX:春日部つむぎ</p>]]></content:encoded>
+      <itunes:summary><![CDATA[音楽の発掘FM、第1回。1996年に埼玉で結成されたメロディックパンクバンド、dustboxのメジャーデビュー前の一枚。
+
+今日の一枚：dustbox『Sound A Bell Named Hope』
+Apple Music：https://music.apple.com/jp/album/sound-a-bell-named-hope/262659118
+
+疾走するビートと伸びやかなハイトーン、明るいのに切ないメロディ。エルレやハイスタが好きな人に。
+おすすめ：「虹」「Promise You」
+
+音声：VOICEVOX:春日部つむぎ]]></itunes:summary>
+      <enclosure url="https://yuukitakuwan-cpu.github.io/music-fm/episodes/20261120-001.mp3" length="1738546" type="audio/mpeg"/>
+      <guid isPermaLink="false">music-fm-0001-2026-11-20</guid>
+      <pubDate>Fri, 20 Nov 2026 13:14:14 +0900</pubDate>
+      <itunes:duration>00:02:25</itunes:duration>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://yuukitakuwan-cpu.github.io/music-fm/artwork.png"/>
+    </item>
     <item>
       <title>第0回（パイロット）Northern19『Everlasting』</title>
       <itunes:title>第0回（パイロット）Northern19『Everlasting』</itunes:title>

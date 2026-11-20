@@ -10,3 +10,4 @@
 | 回 | 日付 | アーティスト | アルバム | Apple Music |
 |---|---|---|---|---|
 | 0 | 2026-11-20 | Northern19 | Everlasting | https://music.apple.com/jp/album/everlasting/293219594 |
+| 1 | 2026-11-20 | dustbox | Sound A Bell Named Hope | https://music.apple.com/jp/album/sound-a-bell-named-hope/262659118 |

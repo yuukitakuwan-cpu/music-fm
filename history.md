@@ -18,3 +18,4 @@
 | 1 | 2026-11-20 | dustbox | Sound A Bell Named Hope | https://music.apple.com/jp/album/sound-a-bell-named-hope/262659118 |
 | 2 | 2026-11-21 | HAWAIIAN6 | BEGINNINGS | https://music.apple.com/jp/album/beginnings/1742518936 |
 | 3 | 2026-11-22 | The Get Up Kids | Something to Write Home About | https://music.apple.com/jp/album/something-to-write-home-about/1450931751 |
+| 4 | 2026-11-23 | ASIAN KUNG-FU GENERATION | 君繋ファイブエム | https://music.apple.com/jp/album/%E5%90%9B%E7%B9%8B%E3%83%95%E3%82%A1%E3%82%A4%E3%83%96%E3%82%A8%E3%83%A0/1536363189 |

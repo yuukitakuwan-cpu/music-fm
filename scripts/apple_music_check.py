@@ -11,6 +11,8 @@ iTunes Search API (country=jp) を使う。アルバム名を指定した場合�
 """
 import json
 import sys
+import time
+import urllib.error
 import unicodedata
 import urllib.parse
 import urllib.request
@@ -21,18 +23,29 @@ def norm(s):
     return "".join(ch for ch in s if ch.isalnum())
 
 
+def fetch(url):
+    """Apple のレート制限（403/429）に備えて少し待って再試行"""
+    for i in range(5):
+        try:
+            with urllib.request.urlopen(url, timeout=30) as r:
+                return json.load(r)
+        except urllib.error.HTTPError as e:
+            if e.code not in (403, 429, 503) or i == 4:
+                raise
+            time.sleep(5 * (i + 1))
+
+
 def search(term, entity="album", limit=200):
     q = urllib.parse.urlencode({"term": term, "country": "JP", "entity": entity,
                                 "limit": limit, "lang": "ja_jp"})
-    with urllib.request.urlopen(f"https://itunes.apple.com/search?{q}", timeout=30) as r:
-        return json.load(r)["results"]
+    return fetch(f"https://itunes.apple.com/search?{q}")["results"]
 
 
 def streamable(collection_id):
     """アルバム収録曲のうち Apple Music でストリーミング可能な曲数 / 全曲数"""
     q = urllib.parse.urlencode({"id": collection_id, "entity": "song", "country": "JP"})
-    with urllib.request.urlopen(f"https://itunes.apple.com/lookup?{q}", timeout=30) as r:
-        songs = [x for x in json.load(r)["results"] if x.get("wrapperType") == "track"]
+    songs = [x for x in fetch(f"https://itunes.apple.com/lookup?{q}")["results"]
+             if x.get("wrapperType") == "track"]
     return sum(1 for x in songs if x.get("isStreamable")), len(songs)
 
 
@@ -61,6 +74,13 @@ def main():
         if album and norm(album) not in norm(r["collectionName"]):
             continue
         hits.append(r)
+    if album and not hits:
+        # 日本ストアではアーティスト名がカタカナ表記のことがある（例: Astor Piazzolla → アストル・ピアソラ）。
+        # その場合はアルバム名一致で拾い、表示されたアーティスト名を目視確認する。
+        for r in res:
+            if r.get("wrapperType") == "collection" and norm(album) in norm(r["collectionName"]) \
+                    and r not in hits:
+                hits.append(r)
     hits.sort(key=lambda r: r.get("releaseDate", ""))
     ok = []
     for r in hits:

@@ -9,6 +9,9 @@ git checkout main && git pull origin main
 bash scripts/setup_voicevox.sh   # 冪等。初回は約2分（2GB取得）、以降は即終了
 ```
 
+## 0.4 特集の確認
+`countdown.md` を読む。**2026-12-09 までは COUNTDOWN JAPAN 予習スペシャル**で、そこのルールと放送予定が通常ルールより優先。
+
 ## 0.5 お便りを確認
 `feedback.md` を読む。**未読のお便り**があれば台本の「お便りコーナー」で読み上げる（後述）。
 「選曲メモ」は今日の選曲の最重要の手がかり。
@@ -60,9 +63,9 @@ Apple Music：https://music.apple.com/jp/album/...
 
 （ひとこと／おすすめ曲）
 
-音声：VOICEVOX:春日部つむぎ
+音声：（podcast.json の voice.credit。現在は VOICEVOX:No.7）
 ```
-- Apple Music のリンクは必須。VOICEVOX のクレジット `VOICEVOX:春日部つむぎ` も必須（無ければ publish.py が自動追記）。
+- Apple Music のリンクは必須。VOICEVOX のクレジット（podcast.json の `voice.credit`）も必須（無ければ publish.py が自動追記）。
 
 ## 4. 音声化してフィード更新
 ```bash

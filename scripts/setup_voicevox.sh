@@ -13,8 +13,8 @@ TAG="${VOICEVOX_TAG:-cpu-ubuntu22.04-0.26.2}"
 INSTALL_DIR="${VOICEVOX_DIR:-$HOME/.cache/voicevox}"
 ENGINE_DIR="$INSTALL_DIR/opt/voicevox_engine"
 PORT="${VOICEVOX_PORT:-50021}"
-# 使うモデルだけ残す（0.vvm = 四国めたん/ずんだもん/春日部つむぎ/雨晴はう）
-KEEP_MODELS="${VOICEVOX_KEEP_MODELS:-0.vvm}"
+# 使うモデルだけ残す（0=春日部つむぎ等, 1=冥鳴ひまり, 6=No.7, 8=WhiteCUL, 24=夜語トバリ等）
+KEEP_MODELS="${VOICEVOX_KEEP_MODELS:-0.vvm 1.vvm 6.vvm 8.vvm 24.vvm}"
 
 need() { command -v "$1" >/dev/null 2>&1; }
 
@@ -36,7 +36,8 @@ if engine_up; then
 fi
 
 # --- download engine (once) ---
-if [ ! -x "$ENGINE_DIR/run" ]; then
+missing=0; for k in $KEEP_MODELS; do [ -f "$ENGINE_DIR/model/$k" ] || missing=1; done
+if [ ! -x "$ENGINE_DIR/run" ] || [ $missing = 1 ]; then
   echo "[setup] downloading $IMAGE:$TAG (about 2GB, ~1-2 min)"
   mkdir -p "$INSTALL_DIR"
   arch="$(uname -m)"; case "$arch" in x86_64) plat=amd64;; aarch64|arm64) plat=arm64;; *) echo "unsupported arch $arch" >&2; exit 1;; esac

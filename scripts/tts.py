@@ -10,7 +10,7 @@
     - "[jingle]" だけの行 = 短いチャイムを挟む（番組のコーナー区切り用）。
 
 事前に scripts/setup_voicevox.sh でエンジンを起動しておくこと。
-既定の声: 春日部つむぎ（ノーマル, style id 8）— 明るく元気な女の子の声。
+既定の声と読み上げ設定は podcast.json の "voice"（話者ID・速さ・抑揚・間・仕上げ・クレジット）。
 """
 import argparse
 import json
@@ -26,8 +26,10 @@ HOST = os.environ.get("VOICEVOX_URL", "http://127.0.0.1:50021")
 # localhost にはプロキシを通さない
 _opener = urllib.request.build_opener(urllib.request.ProxyHandler({}))
 
-SPEAKER_DEFAULT = 8  # 春日部つむぎ ノーマル
 RATE = 24000
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# 声の設定は podcast.json の "voice" に集約（話者・速さ・抑揚・間・クレジット）
+VOICE = json.load(open(os.path.join(ROOT, "podcast.json"), encoding="utf-8")).get("voice", {})
 
 
 def api(path, params=None, body=None):
@@ -39,10 +41,11 @@ def api(path, params=None, body=None):
         return r.read()
 
 
-def synth_line(text, speaker, speed, pitch, intonation):
+def synth_line(text, speaker, speed, pitch, intonation, pause_scale):
     q = json.loads(api("/audio_query", {"text": text, "speaker": speaker}))
     q.update(speedScale=speed, pitchScale=pitch, intonationScale=intonation,
              volumeScale=1.0, prePhonemeLength=0.05, postPhonemeLength=0.1,
+             pauseLengthScale=pause_scale,
              outputSamplingRate=RATE, outputStereo=False)
     return api("/synthesis", {"speaker": speaker}, q)
 
@@ -76,10 +79,14 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("script")
     ap.add_argument("out")
-    ap.add_argument("--speaker", type=int, default=SPEAKER_DEFAULT)
-    ap.add_argument("--speed", type=float, default=1.12)
-    ap.add_argument("--pitch", type=float, default=0.02)
-    ap.add_argument("--intonation", type=float, default=1.25)
+    ap.add_argument("--speaker", type=int, default=VOICE.get("speaker", 8))
+    ap.add_argument("--speed", type=float, default=VOICE.get("speed", 1.12))
+    ap.add_argument("--pitch", type=float, default=VOICE.get("pitch", 0.02))
+    ap.add_argument("--intonation", type=float, default=VOICE.get("intonation", 1.25))
+    ap.add_argument("--pause-scale", type=float, default=VOICE.get("pause_scale", 1.0))
+    ap.add_argument("--line-gap", type=float, default=VOICE.get("line_gap", 0.18))
+    ap.add_argument("--polish", type=int, default=VOICE.get("polish", 0),
+                    help="1 = 軽いEQ・コンプ・ごく薄い残響でスタジオっぽく（機械っぽさを和らげる）")
     ap.add_argument("--bitrate", default="96k")
     a = ap.parse_args()
 
@@ -100,8 +107,14 @@ def main():
             pcm += silence(0.2) + jingle + silence(0.3)
             done += 1
             continue
-        pcm += read_pcm(synth_line(line, a.speaker, a.speed, a.pitch, a.intonation))
-        pcm += silence(0.18)
+        pcm += read_pcm(synth_line(line, a.speaker, a.speed, a.pitch, a.intonation, a.pause_scale))
+        # 行末の間を少し揺らして、一定リズムの機械っぽさを減らす
+        gap = a.line_gap
+        if line.endswith(("？", "?", "！", "!")):
+            gap += 0.12
+        elif line.endswith("。"):
+            gap += 0.06
+        pcm += silence(gap)
         done += 1
         print(f"\r[tts] {done}/{n}", end="", file=sys.stderr, flush=True)
     print(file=sys.stderr)
@@ -111,7 +124,10 @@ def main():
         subprocess.run(
             ["ffmpeg", "-y", "-v", "error", "-f", "s16le", "-ar", str(RATE), "-ac", "1",
              "-i", raw.name,
-             "-af", "loudnorm=I=-16:TP=-1.5:LRA=11",
+             "-af", (("highpass=f=80,equalizer=f=250:t=q:w=1:g=-2,equalizer=f=3500:t=q:w=1.2:g=1.5,"
+                      "deesser=i=0.3,acompressor=threshold=-20dB:ratio=2.5:attack=8:release=120,"
+                      "aecho=0.85:0.7:28|47:0.10|0.06,") if a.polish else "")
+                    + "loudnorm=I=-16:TP=-1.5:LRA=11",
              "-ar", "44100", "-ac", "1", "-c:a", "libmp3lame", "-b:a", a.bitrate,
              a.out], check=True)
     dur = len(pcm) / 2 / RATE

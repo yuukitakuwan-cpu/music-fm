@@ -53,7 +53,7 @@ def hms(s):
 
 
 def credit_ok(desc):
-    return CONF["voice_credit"] in desc
+    return CONF["voice"]["credit"] in desc
 
 
 def to_html(text):
@@ -157,7 +157,7 @@ def add(a):
     eps = load()
     desc = open(a.description_file, encoding="utf-8").read().strip()
     if not credit_ok(desc):
-        desc += f"\n\n音声：{CONF['voice_credit']}"
+        desc += f"\n\n音声：{CONF['voice']['credit']}"
     date = dt.date.fromisoformat(a.date) if a.date else dt.datetime.now(JST).date()
     number = a.number if a.number is not None else (max([e["number"] for e in eps], default=-1) + 1)
     fname = f"{date.strftime('%Y%m%d')}-{number:03d}.mp3"

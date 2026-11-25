@@ -1,7 +1,7 @@
 {
   "title": "音楽の発掘FM",
   "subtitle": "毎朝ひとつ、きみのためのアルバムを発掘するラジオ",
-  "description": "哀愁メロディックパンクを軸に、メジャーからマイナーまで、毎朝1枚のアルバムを友達みたいなDJが紹介する、たった一人のリスナーのためのラジオ番組。紹介するのはApple Musicで聴けるものだけ。音声：VOICEVOX:春日部つむぎ",
+  "description": "哀愁メロディックパンクを軸に、メジャーからマイナーまで、毎朝1枚のアルバムを友達みたいなDJが紹介する、たった一人のリスナーのためのラジオ番組。紹介するのはApple Musicで聴けるものだけ。音声：VOICEVOX:No.7（第6回まではVOICEVOX:春日部つむぎ）",
   "author": "音楽の発掘FM",
   "owner_name": "音楽の発掘FM",
   "language": "ja",
@@ -11,5 +11,15 @@
   "base_url": "https://yuukitakuwan-cpu.github.io/music-fm",
   "artwork": "artwork.png",
   "keep_episodes": 30,
-  "voice_credit": "VOICEVOX:春日部つむぎ"
+  "voice": {
+    "speaker": 29,
+    "name": "No.7 ノーマル",
+    "speed": 1.06,
+    "pitch": 0.0,
+    "intonation": 1.1,
+    "pause_scale": 1.15,
+    "line_gap": 0.3,
+    "polish": 1,
+    "credit": "VOICEVOX:No.7"
+  }
 }

@@ -5,9 +5,9 @@
     <link>https://yuukitakuwan-cpu.github.io/music-fm/</link>
     <atom:link href="https://yuukitakuwan-cpu.github.io/music-fm/feed.xml" rel="self" type="application/rss+xml"/>
     <language>ja</language>
-    <description><![CDATA[哀愁メロディックパンクを軸に、メジャーからマイナーまで、毎朝1枚のアルバムを友達みたいなDJが紹介する、たった一人のリスナーのためのラジオ番組。紹介するのはApple Musicで聴けるものだけ。音声：VOICEVOX:春日部つむぎ]]></description>
+    <description><![CDATA[哀愁メロディックパンクを軸に、メジャーからマイナーまで、毎朝1枚のアルバムを友達みたいなDJが紹介する、たった一人のリスナーのためのラジオ番組。紹介するのはApple Musicで聴けるものだけ。音声：VOICEVOX:No.7（第6回まではVOICEVOX:春日部つむぎ）]]></description>
     <itunes:subtitle>毎朝ひとつ、きみのためのアルバムを発掘するラジオ</itunes:subtitle>
-    <itunes:summary><![CDATA[哀愁メロディックパンクを軸に、メジャーからマイナーまで、毎朝1枚のアルバムを友達みたいなDJが紹介する、たった一人のリスナーのためのラジオ番組。紹介するのはApple Musicで聴けるものだけ。音声：VOICEVOX:春日部つむぎ]]></itunes:summary>
+    <itunes:summary><![CDATA[哀愁メロディックパンクを軸に、メジャーからマイナーまで、毎朝1枚のアルバムを友達みたいなDJが紹介する、たった一人のリスナーのためのラジオ番組。紹介するのはApple Musicで聴けるものだけ。音声：VOICEVOX:No.7（第6回まではVOICEVOX:春日部つむぎ）]]></itunes:summary>
     <itunes:author>音楽の発掘FM</itunes:author>
     <itunes:owner><itunes:name>音楽の発掘FM</itunes:name></itunes:owner>
     <itunes:image href="https://yuukitakuwan-cpu.github.io/music-fm/artwork.png"/>
@@ -16,7 +16,44 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
     <itunes:block>Yes</itunes:block>
-    <lastBuildDate>Wed, 25 Nov 2026 06:54:55 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 26 Nov 2026 06:55:24 +0900</lastBuildDate>
+    <item>
+      <title>第7回【CDJ予習】KUZIRA『Smoke Life Away』</title>
+      <itunes:title>第7回【CDJ予習】KUZIRA『Smoke Life Away』</itunes:title>
+      <itunes:episode>7</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+      <description><![CDATA[音楽の発掘FM、第7回。今日から「COUNTDOWN JAPAN 26/27 予習スペシャル」！第1弾は12月29日出演のKUZIRA。お便りコーナーではラジオネーム「わたあめ」さんの感想を紹介。今回から声が変わりました。
+
+今日の一枚：KUZIRA『Smoke Life Away』（2025年／PIZZA OF DEATH RECORDS）
+Apple Music：https://music.apple.com/jp/album/smoke-life-away/1823878644
+
+出演日：12月29日（火）
+Hi-STANDARDの横山健が立ち上げたレーベルからリリースされた全12曲。古き良きメロコアの魂を今に受け継ぐ一枚。
+おすすめ：「And Dance Going Nowhere」「Don’t Smoke Life Away」
+
+感想はラジオネームを添えて送ってね。番組で読み上げて、次の選曲に活かします。
+
+音声：VOICEVOX:No.7]]></description>
+      <content:encoded><![CDATA[<p>音楽の発掘FM、第7回。今日から「COUNTDOWN JAPAN 26/27 予習スペシャル」！第1弾は12月29日出演のKUZIRA。お便りコーナーではラジオネーム「わたあめ」さんの感想を紹介。今回から声が変わりました。</p><p>今日の一枚：KUZIRA『Smoke Life Away』（2025年／PIZZA OF DEATH RECORDS）<br>Apple Music：<a href="https://music.apple.com/jp/album/smoke-life-away/1823878644">https://music.apple.com/jp/album/smoke-life-away/1823878644</a></p><p>出演日：12月29日（火）<br>Hi-STANDARDの横山健が立ち上げたレーベルからリリースされた全12曲。古き良きメロコアの魂を今に受け継ぐ一枚。<br>おすすめ：「And Dance Going Nowhere」「Don’t Smoke Life Away」</p><p>感想はラジオネームを添えて送ってね。番組で読み上げて、次の選曲に活かします。</p><p>音声：VOICEVOX:No.7</p>]]></content:encoded>
+      <itunes:summary><![CDATA[音楽の発掘FM、第7回。今日から「COUNTDOWN JAPAN 26/27 予習スペシャル」！第1弾は12月29日出演のKUZIRA。お便りコーナーではラジオネーム「わたあめ」さんの感想を紹介。今回から声が変わりました。
+
+今日の一枚：KUZIRA『Smoke Life Away』（2025年／PIZZA OF DEATH RECORDS）
+Apple Music：https://music.apple.com/jp/album/smoke-life-away/1823878644
+
+出演日：12月29日（火）
+Hi-STANDARDの横山健が立ち上げたレーベルからリリースされた全12曲。古き良きメロコアの魂を今に受け継ぐ一枚。
+おすすめ：「And Dance Going Nowhere」「Don’t Smoke Life Away」
+
+感想はラジオネームを添えて送ってね。番組で読み上げて、次の選曲に活かします。
+
+音声：VOICEVOX:No.7]]></itunes:summary>
+      <enclosure url="https://yuukitakuwan-cpu.github.io/music-fm/episodes/20261126-007.mp3" length="2654503" type="audio/mpeg"/>
+      <guid isPermaLink="false">music-fm-0007-2026-11-26</guid>
+      <pubDate>Thu, 26 Nov 2026 06:55:24 +0900</pubDate>
+      <itunes:duration>00:03:41</itunes:duration>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://yuukitakuwan-cpu.github.io/music-fm/artwork.png"/>
+    </item>
     <item>
       <title>第6回 FOUR GET ME A NOTS『Down to Earth』</title>
       <itunes:title>第6回 FOUR GET ME A NOTS『Down to Earth』</itunes:title>

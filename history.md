@@ -22,3 +22,4 @@
 | 5 | 2026-11-24 | Astor Piazzolla（冒険回） | Tango: Zero Hour | https://music.apple.com/jp/album/tango-zero-hour/79574688 |
 | 6 | 2026-11-25 | FOUR GET ME A NOTS | Down to Earth | https://music.apple.com/jp/album/down-to-earth/299019163 |
 | 7 | 2026-11-26 | KUZIRA（CDJ予習） | Smoke Life Away | https://music.apple.com/jp/album/smoke-life-away/1823878644 |
+| 8 | 2026-11-27 | 04 Limited Sazabys（CDJ予習） | CAVU | https://music.apple.com/jp/album/cavu/977103835 |

@@ -20,6 +20,7 @@
     "pause_scale": 1.15,
     "line_gap": 0.3,
     "polish": 1,
-    "credit": "VOICEVOX:No.7"
+    "credit": "VOICEVOX:No.7",
+    "bgm_volume": 0.12
   }
 }

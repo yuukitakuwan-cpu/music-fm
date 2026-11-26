@@ -14,6 +14,7 @@
 | `scripts/publish.py` | mp3 を `episodes/` に追加し `feed.xml`（iTunes 対応 RSS）と `index.html` を再生成。直近30回だけ保持 |
 | `scripts/apple_music_check.py` | Apple Music（日本）での配信・ストリーミング可否を確認してリンクを出す |
 | `scripts/make_episode.sh` | 上記をまとめて1回分を作る |
+| `scripts/make_bgm.py` | オリジナルBGM（著作権フリーの合成ループ）を `assets/bgm_loop.wav` に生成。音量は podcast.json の voice.bgm_volume |
 | `scripts/make_artwork.py` | 番組アートワーク `artwork.png`（3000×3000）を生成 |
 | `transcripts/` | 各回の台本と説明文 |
 | `history.md` | 紹介済みアルバム（重複防止） |

@@ -87,6 +87,8 @@ def main():
     ap.add_argument("--line-gap", type=float, default=VOICE.get("line_gap", 0.18))
     ap.add_argument("--polish", type=int, default=VOICE.get("polish", 0),
                     help="1 = 軽いEQ・コンプ・ごく薄い残響でスタジオっぽく（機械っぽさを和らげる）")
+    ap.add_argument("--bgm-volume", type=float, default=VOICE.get("bgm_volume", 0.0),
+                    help="BGM（assets/bgm_loop.wav）の音量。0でBGMなし。声が出ている間は自動で下がる")
     ap.add_argument("--bitrate", default="96k")
     a = ap.parse_args()
 
@@ -119,17 +121,34 @@ def main():
         print(f"\r[tts] {done}/{n}", end="", file=sys.stderr, flush=True)
     print(file=sys.stderr)
 
+    polish = ("highpass=f=80,equalizer=f=250:t=q:w=1:g=-2,equalizer=f=3500:t=q:w=1.2:g=1.5,"
+              "deesser=i=0.3,acompressor=threshold=-20dB:ratio=2.5:attack=8:release=120,"
+              "aecho=0.85:0.7:28|47:0.10|0.06,") if a.polish else ""
+    voice_sec = len(pcm) / 2 / RATE
+    bgm = os.path.join(ROOT, "assets", "bgm_loop.wav")
+    use_bgm = a.bgm_volume > 0
+    if use_bgm and not os.path.exists(bgm):
+        subprocess.run([sys.executable, os.path.join(ROOT, "scripts", "make_bgm.py")], check=True)
     with tempfile.NamedTemporaryFile(suffix=".raw") as raw:
         raw.write(pcm); raw.flush()
-        subprocess.run(
-            ["ffmpeg", "-y", "-v", "error", "-f", "s16le", "-ar", str(RATE), "-ac", "1",
-             "-i", raw.name,
-             "-af", (("highpass=f=80,equalizer=f=250:t=q:w=1:g=-2,equalizer=f=3500:t=q:w=1.2:g=1.5,"
-                      "deesser=i=0.3,acompressor=threshold=-20dB:ratio=2.5:attack=8:release=120,"
-                      "aecho=0.85:0.7:28|47:0.10|0.06,") if a.polish else "")
-                    + "loudnorm=I=-16:TP=-1.5:LRA=11",
-             "-ar", "44100", "-ac", "1", "-c:a", "libmp3lame", "-b:a", a.bitrate,
-             a.out], check=True)
+        if use_bgm:
+            lead, tail = 2.5, 4.0
+            total = voice_sec + lead + tail
+            fc = (f"[0:a]aresample=44100,{polish}adelay={int(lead*1000)}:all=1,"
+                  f"apad=whole_dur={total:.2f},aformat=channel_layouts=stereo,asplit=2[v][sc];"
+                  f"[1:a]volume={a.bgm_volume},atrim=0:{total:.2f},asetpts=N/SR/TB,"
+                  f"afade=t=in:d=1.5,afade=t=out:st={total-3.5:.2f}:d=3.5[b];"
+                  f"[b][sc]sidechaincompress=threshold=0.015:ratio=5:attack=30:release=600[bd];"
+                  f"[v][bd]amix=inputs=2:normalize=0,loudnorm=I=-16:TP=-1.5:LRA=11[out]")
+            cmd = ["ffmpeg", "-y", "-v", "error", "-f", "s16le", "-ar", str(RATE), "-ac", "1",
+                   "-i", raw.name, "-stream_loop", "-1", "-i", bgm,
+                   "-filter_complex", fc, "-map", "[out]",
+                   "-ar", "44100", "-ac", "2", "-c:a", "libmp3lame", "-b:a", "128k", a.out]
+        else:
+            cmd = ["ffmpeg", "-y", "-v", "error", "-f", "s16le", "-ar", str(RATE), "-ac", "1",
+                   "-i", raw.name, "-af", polish + "loudnorm=I=-16:TP=-1.5:LRA=11",
+                   "-ar", "44100", "-ac", "1", "-c:a", "libmp3lame", "-b:a", a.bitrate, a.out]
+        subprocess.run(cmd, check=True)
     dur = len(pcm) / 2 / RATE
     print(f"[tts] wrote {a.out} ({dur:.1f}s)", file=sys.stderr)
 
